@@ -21,7 +21,7 @@ def max(x: float, y: float) -> float:
     """zwraca większą z dwóch liczb """  # opis działania funkcji
 
     if x == y:
-        raise Exception('Podane argumenty są sobie równe')
+        raise ValueError('Podane argumenty są sobie równe')
     else:
         maksimum = x
         if x < y:
@@ -56,23 +56,23 @@ def pole_trojkata(a: float, b: float, c: float) -> float:
     if a > b and a > c:
         maksimum = a
         if maksimum < (b + c):
-            print('Mozna utworzyc trojkat')
+            pass
         else:
-            print('Nie można utworzyć takiego trójkąta')
+            raise ValueError('Nie da się utworzyć trójkąta')
 
     elif b > a and b > c:
         maksimum = b
         if maksimum < (a + c):
-            print('Mozna utworzyc trojkat')
+            pass
         else:
-            print('Nie można utworzyć takiego trójkąta')
+            raise ValueError('Nie da się utworzyć trójkąta')
 
     elif c > a and c > b:
         maksimum = c
         if maksimum < (b + a):
-            print('Mozna utworzyc trojkat')
+            pass
         else:
-            print('Nie można utworzyć takiego trójkąta')
+            raise ValueError('Nie da się utworzyć trójkąta')
 
     p = (a + b + c) / 2
     pole = math.sqrt(p * (p - a) * (p - b) * (p - c))
