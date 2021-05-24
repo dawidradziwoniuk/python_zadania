@@ -7,7 +7,7 @@
 import calendar
 
 
-def ile_dni(miesiac):
+def ile_dni(miesiac, rok=2021):
     slownik = {
         'styczeń': 1,
         'luty': 2,
@@ -23,15 +23,16 @@ def ile_dni(miesiac):
         'grudzień': 12
     }
     if miesiac.lower() == 'luty':
-        rok = int(input('Podaj jakiego roku: '))
+
         liczba_dni = calendar.monthrange(rok, slownik[miesiac])[1]
 
     else:
-        liczba_dni = calendar.monthrange(2021, slownik[miesiac])[1]
-
+        liczba_dni = calendar.monthrange(rok, slownik[miesiac])[1]
 
     return liczba_dni
 
 
 month = input('Podaj nazwe miesiaca: ')
+if month == 'luty':
+    year = int(input('Podaj jakiego roku'))
 print(ile_dni(month))
